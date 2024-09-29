@@ -1,0 +1,13 @@
+
+#copy the dataset to spark container
+docker cp .\Amazon_Sale_Report.csv spark-master:/
+
+#copy the script to spark container
+docker cp .\amazon_sales_analysis.py spark-master:/
+
+#run spark bash
+docker exec -it spark-master bash
+
+#run the script file
+spark-submit /amazon_sales_analysis.py
+
